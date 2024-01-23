@@ -1,0 +1,20 @@
+.nameLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+form {
+  border: 1px solid black;
+  box-shadow: 0px 1px 2px 0px gray;
+  padding: 15px;
+}
+form button {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+form button:focus,
+form button:hover {
+  box-shadow: 0px 1px 0px 1px gray;
+  background-color: lightyellow;
+}

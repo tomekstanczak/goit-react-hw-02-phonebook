@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import Filter from '../Filter/Filter';
 import ContactForm from '../ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
+import PropTypes from 'prop-types';
 
 export default class ContactElement extends Component {
   constructor() {
@@ -89,3 +90,13 @@ export default class ContactElement extends Component {
     );
   }
 }
+
+ContactElement.propTypes = {
+  name: PropTypes.string,
+  number: PropTypes.number,
+  filter: PropTypes.string,
+  contact: PropTypes.shape({
+    name: PropTypes.string,
+    number: PropTypes.number,
+  }),
+};

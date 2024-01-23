@@ -1,4 +1,5 @@
 import css from '../ContactElement/ContactElement.module.css';
+import PropTypes from 'prop-types';
 
 const Filter = ({ value, onChange }) => {
   return (
@@ -9,6 +10,11 @@ const Filter = ({ value, onChange }) => {
       </label>
     </div>
   );
+};
+
+Filter.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 export default Filter;

@@ -1,4 +1,5 @@
 import css from '../ContactElement/ContactElement.module.css';
+import PropTypes from 'prop-types';
 
 const ContactForm = ({ valueNumber, valueName, onChange, onSubmit }) => {
   return (
@@ -35,6 +36,13 @@ const ContactForm = ({ valueNumber, valueName, onChange, onSubmit }) => {
       </form>
     </div>
   );
+};
+
+ContactForm.propTypes = {
+  valueNumber: PropTypes.number,
+  valueName: PropTypes.number,
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
 };
 
 export default ContactForm;

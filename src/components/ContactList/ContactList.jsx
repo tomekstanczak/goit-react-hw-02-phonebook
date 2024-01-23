@@ -1,4 +1,5 @@
 import css from '../ContactElement/ContactElement.module.css';
+import PropTypes from 'prop-types';
 
 const ContactList = ({ filteredList, onClick }) => {
   return (
@@ -18,4 +19,16 @@ const ContactList = ({ filteredList, onClick }) => {
     </ul>
   );
 };
+
+ContactList.propTypes = {
+  filteredList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      name: PropTypes.string,
+      number: PropTypes.string,
+    })
+  ),
+  onClick: PropTypes.func,
+};
+
 export default ContactList;

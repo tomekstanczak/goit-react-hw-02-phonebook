@@ -35,14 +35,25 @@ export default class ContactElement extends Component {
       name,
       number,
     };
-    this.setState({
-      contacts: [...prevState, newContact],
-    });
+
+    const existingContact = prevState.some(prev =>
+      prev.name.toLowerCase().includes(name.toLowerCase())
+    );
+
+    if (existingContact) {
+      return alert(`${name}is existing in contacts`);
+    } else {
+      this.setState({
+        contacts: [...prevState, newContact],
+      });
+    }
+
     this.setState({
       name: '',
       number: '',
     });
   };
+
   filterContacts = () => {
     const { contacts, filter } = this.state;
     return contacts.filter(contact =>

@@ -1,8 +1,10 @@
+import css from '../ContactElement/ContactElement.module.css';
+
 const ContactList = ({ filteredList, onClick }) => {
   return (
     <ul>
       {filteredList.map(contact => (
-        <li key={contact.id}>
+        <li className={css.listStyle} key={contact.id}>
           {contact.name}: {contact.number}
           <button
             type="button"

@@ -61,8 +61,15 @@ export default class ContactElement extends Component {
     );
   };
 
+  contactDelete = idContact => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== idContact),
+    }));
+  };
+
   render() {
     const filteredContacts = this.filterContacts();
+
     return (
       <div>
         <h1>Phonebook</h1>
@@ -74,7 +81,10 @@ export default class ContactElement extends Component {
         />
         <h2>Contacts</h2>
         <Filter value={this.state.filter} onChange={this.handleChange} />
-        <ContactList filteredList={filteredContacts} />
+        <ContactList
+          filteredList={filteredContacts}
+          onClick={this.contactDelete}
+        />
       </div>
     );
   }
